@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Like;
 use App\Post;
 use Illuminate\Http\Request;
 use Illuminate\Session\Store;
@@ -26,6 +27,13 @@ class PostController extends Controller
         //$postModel=new Post();
         $post=Post::find($id);//$postModel->getPost($session,$id);
         return view('blog.post',['post'=>$post]);
+    }
+    public function likePost($id)
+    {
+        $post = Post::where('id',$id)->first();
+        $like = new Like();
+        $post->Likes()->save($like);
+        return redirect()->back();
     }
     public function getAdminCreate()
     {

@@ -8,7 +8,10 @@ class Post extends Model
 {
     protected $fillable=['title','content'];
 
-
+    public function Likes()
+    {
+        return $this->hasMany('App\Like');
+    }
 
     //
     public function getPosts($session)

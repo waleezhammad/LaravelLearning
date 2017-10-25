@@ -8,6 +8,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
+            <p>{{count($post->likes)}} | likes <a href="{{route('blog.post.like',['id'=>$post->id])}}">like</a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
             <p>{{$post->content}}</p>
         </div>
     </div>
