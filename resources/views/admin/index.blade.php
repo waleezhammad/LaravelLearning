@@ -15,8 +15,11 @@
     <hr>
     <div class="row">
         <div class="col-md-12">
-            <p><strong>{{$post['title']}}</strong>
-                <a href="{{ route('admin.edit',array_search($post,$posts)) }}">Edit</a></p>
+            <p><strong>{{$post->title}}</strong>
+                <a href="{{ route('admin.edit',$post->id) }}">Edit</a>
+                <a href="{{ route('admin.delete',$post->id) }}">Delete</a></p>
+            </p>
+
         </div>
     </div>
     @endforeach

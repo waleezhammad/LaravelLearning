@@ -40,7 +40,10 @@ Route::group(['prefix' => 'admin'], function() {
         'uses'=>'postController@postAdminCreate',
         'as'=>'admin.create'
     ]);
-
+    Route::get('delete/{id}', [
+        'uses'=>'postController@deletePostAdmin',
+        'as'=>'admin.delete'
+    ]);
     Route::get('edit/{id}', [
         'uses'=>'postController@getAdminEdit',
         'as'=>'admin.edit'
